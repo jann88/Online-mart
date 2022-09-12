@@ -1,0 +1,29 @@
+.card-info{
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 70%;
+    margin: 2em 10em;
+    gap: 4em;
+    padding: 2em;
+    background: white;
+  }
+  
+  .card-info img{
+    height: 500px;
+    width: 1500px;
+  }
+  /* .card-info p{
+    line-height: 2em;
+  } */
+  .card-info button{
+    background-color: rgb(207, 195, 24);
+    width: 7em;
+    height: 3em;
+    padding: .5em;
+    border-radius: 2em;
+  }
+    
