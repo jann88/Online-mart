@@ -3,7 +3,7 @@ import { useState } from "react";
 // import { Link } from "react-router-dom";
 import "./Signup.css"
 
-const Login = ({onAddUser}) => {
+const User = ({onAddUser}) => {
   // state for controlled input fields
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -79,4 +79,4 @@ const Login = ({onAddUser}) => {
   );
 };
 
-export default Login;
+export default User;

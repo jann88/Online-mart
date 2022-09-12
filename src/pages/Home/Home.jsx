@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import Products from "../Products/Products";
-// import Product from "../Product/Product";
 import { Link } from "react-router-dom";
 import "./Home.css"
+import Products from "../Products/Products";
 
 
 const Home = () => {
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([""]);
     const [search, setSearch] = useState([]);
 
-    
-    
-
     useEffect(() => {
+
         fetch("http://localhost:9292/products")
         .then((response) => response.json())
         .then((response) => {
@@ -57,9 +54,9 @@ const Home = () => {
             setSearch(query);
           }}
         />
-        <button class="btn btn-outline-success" type="submit">Search</button>
+   
     </form>
-    <div className="card-container" d-flex flex-wrap >
+    <div className="card-container" >
         {search?.map((product, i) => {
             return <Products product={product} 
             key={product?.id}

@@ -1,12 +1,19 @@
-import React from "react";
-import './Footer.css'
+import React from 'react';
+import './Footer.css';
+import { AiFillInstagram, AiOutlineTwitter} from 'react-icons/ai';
 
 const Footer = () => {
-    return(
-        <div className="footer">
-            <h4>2022 Copyright Online Mart</h4>
+  return (
+    <div className="footer-container">
+      <p>2022 Online mart **All rights reserverd**</p>
+      <p className="icons">
+        <AiFillInstagram />
 
-        </div>
-    )
+        <AiOutlineTwitter />
+        
+      </p>
+    </div>
+  )
 }
-export default Footer;
+
+export default Footer
