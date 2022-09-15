@@ -11,7 +11,7 @@ const Home = () => {
 
     useEffect(() => {
 
-        fetch("http://localhost:9292/products")
+        fetch("https://my-shop-mart.herokuapp.com/products")
         .then((response) => response.json())
         .then((response) => {
         

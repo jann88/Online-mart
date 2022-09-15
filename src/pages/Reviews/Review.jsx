@@ -1,65 +1,6 @@
-// import React, { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
-// import axios from "axios";
-// import Product from "../Product/Product";
-// import User from "../Signup/Signup";
-// import Reviews from "./Reviews"
-
-// function Review() {
-//   const { id } = useParams();
-//   const [ review, setReview ] = useState( [] );
-//   const [reviewItem, setReviewItem] = useState([])
-
-
-//   // post review
-//   const handleClick = () => {
-//     Reviews.push(reviewItem);
-//     // console.log(review);
-//     const reviewItem = reviewItem ;
-//     const name = User.id;
-//     const productName = Product.id;
-    
-   
-    
-
-//     axios.post("http://localhost:9292/addreview", {
-//         review,
-//         name,
-//         productName,
-//       })
-//       .then(() => {
-//         alert("review posted");
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   };
-
-//   useEffect(() => {
-//     fetch(`http://localhost:9292/products/${id}`)
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log(data);
-//         setReview(data);
-//       });
-//   }, [id]);
-
-//   return (
-//     <div className="review">
-     
-//       <div>
-//         <h2>Name: {User.name}</h2>
-//         <p>Product: {Product.name}</p>
-    
-//         <p>Rating: {review.rating && review.rating.rate && review.rating.count}</p>
-//         <button onClick={() => handleClick(review)}>Add</button>
-//       </div>
-//     </div>
-//   );
-// }
-// export default Review;
 import React, { useState } from "react";
-const FORM_ENDPOINT = "http://localhost:9292/reviews";
+import "./Review.css"
+const FORM_ENDPOINT = "https://my-shop-mart.herokuapp.com/reviews";
 const Review = () => {
   const [submitted, setSubmitted] = useState(false);
   const handleSubmit = () => {
@@ -121,7 +62,7 @@ const Review = () => {
             className="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
             type="submit"
           >
-            Send a message
+            Submit
           </button>
         </div>
       </form>

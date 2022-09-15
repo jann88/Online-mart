@@ -14,16 +14,16 @@ function Product() {
     console.log(product);
     const name = product.name;
     const image_url = product.image_url;
-    const description = product.description;
+    // const description = product.description;
     const price = product.price;
    
     
 
-    axios.post("http://localhost:9292/carts", {
+    axios.post("https://my-shop-mart.herokuapp.com/carts", {
         name,
-        description,
-        price,
-        image_url,
+        // description,
+       image_url,
+       price
       })
       .then(() => {
         alert("product posted");
@@ -32,9 +32,10 @@ function Product() {
         console.log(error);
       });
   };
+  
 
   useEffect(() => {
-    fetch(`http://localhost:9292/products/${id}`)
+    fetch(`https://my-shop-mart.herokuapp.com/products/${id}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -49,10 +50,11 @@ function Product() {
         <h2>Name: {product.name}</h2>
         <p>Description: {product.description}</p>
         <p>
-          <em>$ {product.price}</em>
+          <em>Ksh {product.price}</em>
         </p>
         <p>Rating: {product.rating && product.rating.rate && product.rating.count}</p>
         <button onClick={() => handleClick(product)}>Add To Cart</button>
+       
       </div>
     </div>
   );

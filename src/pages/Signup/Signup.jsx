@@ -23,7 +23,7 @@ const User = ({onAddUser}) => {
     console.log(user);
     // notify()
     // make post request
-    fetch("http://localhost:9292/users", {
+    fetch("https://my-shop-mart.herokuapp.com/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
@@ -37,7 +37,7 @@ const User = ({onAddUser}) => {
   return (
     <div class="container">
       <form onSubmit={handleSubmit}>
-        <h2 class="title">Kindly Sign Up here</h2>
+        <h2 class="title">Sign Up here</h2>
         <div class="user-details">
           <div class="input-box">
             <span class="details">Name</span>
@@ -67,13 +67,35 @@ const User = ({onAddUser}) => {
               required
             />
           </div>
-          <button className="button">SignUp</button>
+          <div className="hidden space-x-2 md:inline-block">
+          <a
+            href="/signup"
+            className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+          >
+             <button className="btn">Signin</button>
+          
+          </a>
+        </div>
+          {/* <button className="button">SignUp</button> */}
         </div>
       </form>
       <div className="go-home">
         <a href="/">
           <button className="home-btn">Home</button>
         </a>
+
+        <div className="mt-3 space-y-2 lg:hidden md:">
+              <a
+                href="/"
+                className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
+              >
+                   <button className="signout">Signout</button>
+               
+              </a>
+            </div>
+        
+       
+        
       </div>
     </div>
   );

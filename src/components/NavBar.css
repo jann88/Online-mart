@@ -5,12 +5,13 @@ h1{
 }
 ul{
   list-style-type: none;
-  background-color: brown;
+  display: flex;
+  /* background-color: brown; */
   font-weight: 500;
   font-size: 30px;
   text-decoration-color: #ffffff;
   color: #ffffff;
-  text-align: center;
+  /* text-align: center; */
   text-decoration: none;
   
   
@@ -24,4 +25,31 @@ li {
   padding: 14px 16px;
   text-decoration: none;
 
+}
+.cartbtn{
+  background-color: #04e8ff;
+  padding-bottom: 2em;
+  height: 2em;
+  width: 5em;
+  border-radius: 2em;
+  
+}
+
+.routes > ul {
+  display: flex;
+  text-decoration: none;
+  float: right;
+  margin-right: -10em;
+  margin-top: 1.5em;
+}
+.routes > ul  li {
+  list-style: none;
+  text-decoration: none;
+  padding: 0 1em 0 1em;
+  /* margin-right: 2em; */
+}
+.routes > ul  li:hover{
+  cursor: pointer;
+  color: #00a1a7;
+  font-size: 20px;
 }

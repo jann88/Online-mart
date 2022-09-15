@@ -1,79 +1,61 @@
-// import React from "react";
-// import User from "../Signup/Signup.jsx";
-// import { Link } from "react-router-dom";
-// import { useState, useEffect } from "react";
-// // import Review from "./Review.js";
-// // import AddReview from "./AddReview.jsx";
-// import { useParams } from "react-router-dom";
+import React from "react";
+import { useState, useEffect } from "react";
+      
+const Reviews = () => {
+    const [isReview, setIsReview] = useState([""]);
+    // const [search, setSearch] = useState([]);
 
+    useEffect(() => {
 
-
-
-// function Reviews({reviews, id }) {
-//     // const {id} = useParams();
-//     const [List, setList] = useState([]);
-//     // const [search, setSearch] = useState([]);
-
-    
-    
-
-//     useEffect(() => {
-//         fetch("http://localhost:9292/reviews")
-//         .then((response) => response.json())
-//         .then((response) => {
+        fetch("https://my-shop-mart.herokuapp.com/reviews")
+        .then((response) => response.json())
+        .then((response) => {
         
-//         setList(response)
-//         console.log(List)
-//     });
+        setProducts(response)
+        console.log(isReview)
+    });
 
 
 
 
-//     }, [List]);
+    }, []);
 
-//     // useEffect(() => {
-//     //     setSearch(reviews)
-//     // }, [reviews]);
+    
+    // useEffect(() => {
+    //     setSearch(review)
+    // }, [reviews]);
     
 
-//     function deleteElem(e){
+    return(
+        <>
+        <div className="review" >
+            <h2>Feedback</h2>
+            <Link to={isreview} onClick={() => <Reviews/>}>
+    
 
-//         fetch(`http://localhost:9292/reviews${id}`,{
-//             method: 'DELETE',
-//             headers: {
-//                 "Content-Type": "application/json"
-//             }
-//         })
-//         .then(r=>r.json())
-//         .then(data=>console.log(List))
-//         .catch(err=>console.log(err))
-//         alert('You\'re delete has been successful')
-
-//     }
-//     return (
-//       <div className="reviews"  key={review.id}>
-        
-           
-            
-//                 <h3>{User.name}</h3>
-//                 <p>{Review.name}</p>
+    
                 
-//                 <Link
-//                     to={`/reviews/${review.id}`}
-//                     onClick={() => <Review key={review.id}/>}>
-                    
-//                 </Link>
-//                 <div>
-//                     <div>
-//                         <AddReview/>
-//                     </div>
-//                 <button id={id} onClick={deleteElem} type="button display in-line padding: 0 20px" className=" btn-danger btn-xsm">🗑</button>
-              
-                  
-//                 </div>
-//               </div>
-            
-     
-//     );
-//   }
-//   export default Reviews;
+            </Link>
+        </div>
+        
+   
+    
+    <div className="card-container" >
+        {isReview?.map((isReview, i) => {
+            return <Reviews isReview={isReview} 
+            key={isReview?.id}
+            name={isReview?.name}
+            // image_url={imageUrl?.image_url}
+            // description={product?.description}
+            // price={price?.price}
+
+            id={isReview?.id || i}
+            setIsReview={setIsReview}
+             />;
+        })}
+    </div>
+        </>
+
+    );
+}
+export default Reviews;
