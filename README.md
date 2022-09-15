@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+Hi# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -24,7 +24,11 @@ As a user you are able to;
 
 Sign-in
 Browse through available products to order.
-Requirements
+Search products 
+
+***Requirements**
+
+
 Access to a computer or any other gadget
 Access to internet
 Install by cloning the github repository.
